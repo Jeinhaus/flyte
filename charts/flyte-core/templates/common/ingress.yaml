@@ -8,84 +8,84 @@
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.SignalService/*
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.AdminService
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.AdminService/*
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.DataProxyService
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.DataProxyService/*
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.AuthMetadataService
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.AuthMetadataService/*
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.IdentityService
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /flyteidl.service.IdentityService/*
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /grpc.health.v1.Health
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
 - path: /grpc.health.v1.Health/*
   pathType: ImplementationSpecific
   backend:
     service:
-      name: flyteadmin
+      name: flyteadmin-grpc
       port:
         number: {{ $grpcPort }}
   {{- end }}

@@ -2,15 +2,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "flyteadmin.name" . }}
+  name: {{ template "flyteadmin.name" . }}-grpc
   namespace: {{ template "flyte.namespace" . }}
   labels: {{ include "flyteadmin.labels" . | nindent 4 }}
   annotations:
     {{- if .Values.flyteadmin.service.annotations }}
     {{ tpl ( .Values.flyteadmin.service.annotations | toYaml ) . | nindent 4 }}
     {{- end }}
-    {{- if .Values.flyteadmin.service.httpAnnotations }}
-    {{ tpl ( .Values.flyteadmin.service.httpAnnotations | toYaml ) . | nindent 4 }}
+    {{- if .Values.flyteadmin.service.grpcAnnotations }}
+    {{ tpl ( .Values.flyteadmin.service.grpcAnnotations | toYaml ) . | nindent 4 }}
     {{- end }}
 spec:
   {{- with .Values.flyteadmin.service.type}}
@@ -21,16 +21,9 @@ spec:
     {{ . }}
   {{- end }}
   ports:
-    - name: http
-      port: 80
+    - name: grpc
+      port: 81
       protocol: TCP
-      targetPort: 8088
-    - name: redoc
-      protocol: TCP
-      port: 87
-      targetPort: 8087
-    - name: http-metrics
-      protocol: TCP
-      port: 10254
+      targetPort: 8089
   selector: {{ include "flyteadmin.selectorLabels" . | nindent 4 }}
 {{- end }}
